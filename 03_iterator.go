@@ -2,11 +2,11 @@ package main
 
 var countRepeating = 5
 
-func Repeat(n int, name string) string {
+func Repeat(name string, n ...int) string {
 	var r string
 
-	if n != 0 {
-		countRepeating = n
+	if n != nil {
+		countRepeating = n[0]
 	}
 
 	for i := 0; i < countRepeating; i++ {
