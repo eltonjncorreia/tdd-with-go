@@ -4,7 +4,7 @@ import "testing"
 
 func TestRepeat(t *testing.T) {
 	input := "c"
-	result := Repeat(input)
+	result := Repeat(0, input)
 	expected := "ccccc"
 
 	if result != expected {
@@ -12,8 +12,19 @@ func TestRepeat(t *testing.T) {
 	}
 }
 
+func TestRepeatN(t *testing.T) {
+	inputN := 2
+	inputChar := "a"
+	result := Repeat(inputN, inputChar)
+	expected := "aa"
+
+	if expected != result {
+		t.Errorf("expected: %s, result %s, inputN: %d, inputChar: %s", expected, result, inputN, inputChar)
+	}
+}
+
 func BenchmarkRepeat(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		Repeat("a")
+		Repeat(0, "a")
 	}
 }
