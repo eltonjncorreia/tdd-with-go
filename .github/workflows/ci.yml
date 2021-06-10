@@ -1,5 +1,10 @@
-on:[push, pull_request]
-name: Build and Testing
+
+
+name: Testing
+on:
+  push:
+    branches:
+    - main
 jobs:
   test:
     strategy:
